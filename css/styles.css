@@ -58,7 +58,10 @@ ul {
 }
 
 /* Typography */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-weight: 700;
     color: var(--text-color);
 }
@@ -302,13 +305,27 @@ footer {
 
 /* Animations */
 @keyframes fadeInLeft {
-    from { opacity: 0; transform: translateX(-50px); }
-    to { opacity: 1; transform: translateX(0); }
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes fadeInRight {
-    from { opacity: 0; transform: translateX(50px); }
-    to { opacity: 1; transform: translateX(0); }
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /* Responsive */
@@ -331,4 +348,49 @@ footer {
     h1 {
         font-size: 2.5rem;
     }
+}
+
+/* Organization Logo */
+.card-header-content {
+    display: flex;
+    align-items: center;
+}
+
+.org-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin-right: 1rem;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Social Icons */
+.social-icon {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links a:hover .social-icon {
+    transform: scale(1.1);
+}
+
+/* GitHub Icon Visibility Fix */
+/* The icon is white (github-light.svg). In Light Mode, we invert it to black. */
+html:not([data-theme="dark"]) .social-icon[src*="github-light"] {
+    filter: invert(1);
+}
+
+/* In Dark Mode, we keep it white. */
+[data-theme="dark"] .social-icon[src*="github-light"] {
+    filter: none;
 }
